@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "packageManager": "npm",
+  "reporters": ["html", "clear-text", "progress"],
+  "testRunner": "jest",
+  "coverageAnalysis": "off",
+  "jest": {
+    "projectType": "custom",
+    "configFile": "./jest.config.js"
+  },
+  "tempDirName": "stryker-tmp",
+  "mutate": [
+    "src/**/*.ts?(x)",
+    "!src/?(*.)+(spec|test|stories).ts?(x)",
+    "!src/components/**/?(*.)+(spec|test|stories).ts?(x)",
+    "!src/state/**/?(*.)+(spec|test|stories).ts?(x)",
+    "!src/state/store.ts",
+    "!src/state/saga/playGame/*",
+    "!src/hooks/*",
+    "!src/elements/**/*",
+    "!src/elements/*",
+    "!src/index.tsx",
+    "!src/localStorage.ts"
+  ]
+}
